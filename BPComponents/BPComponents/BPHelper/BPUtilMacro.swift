@@ -13,7 +13,7 @@ import AdSupport
 //==========================================================================
 //MARK - debug tools
 //==========================================================================
-func ABLog<T>(_ message:T, file:String = #file, lineNumber:Int = #line) {
+public func ABLog<T>(_ message:T, file:String = #file, lineNumber:Int = #line) {
     #if DEBUG
         let fileName = (file as NSString).lastPathComponent
         print("[\(fileName):line:\(lineNumber)]")
@@ -22,15 +22,15 @@ func ABLog<T>(_ message:T, file:String = #file, lineNumber:Int = #line) {
     #endif
 }
 
-func ABLocalString(_ str:String) -> String {
+public func ABLocalString(_ str:String) -> String {
     return NSLocalizedString(str, comment: "default")
 }
 
-func kSafeDisplayStr(_ str:String?) ->String {
+public func kSafeDisplayStr(_ str:String?) ->String {
     return str ?? ""
 }
 
-func KStrHasValue(_ str:String?) -> Bool {
+public func KStrHasValue(_ str:String?) -> Bool {
     guard let str = str else {
         return false
     }
@@ -40,26 +40,26 @@ func KStrHasValue(_ str:String?) -> Bool {
 //==========================================================================
 //MARK - color tools
 //==========================================================================
-func ArcRandomColor() -> UIColor {
+public func ArcRandomColor() -> UIColor {
     let red:CGFloat   = CGFloat(arc4random() % 255) / 255.0
     let green:CGFloat = CGFloat(arc4random() % 255) / 255.0
     let blue:CGFloat  = CGFloat(arc4random() % 255) / 255.0
     return UIColor.init(red: red, green: green, blue: blue, alpha: 1.0)
 }
 
-func Color(_ red:CGFloat, _ green:CGFloat, _ blue:CGFloat) -> UIColor {
+public func Color(_ red:CGFloat, _ green:CGFloat, _ blue:CGFloat) -> UIColor {
     return ColorA(red, green, blue, 1.0)
 }
 
-func ColorA(_ red:CGFloat, _ green:CGFloat, _ blue:CGFloat, _ alpha:CGFloat) -> UIColor {
+public func ColorA(_ red:CGFloat, _ green:CGFloat, _ blue:CGFloat, _ alpha:CGFloat) -> UIColor {
     return UIColor(red: red, green: green, blue: blue, alpha: alpha)
 }
 
-func ColorFromRGB(_ hexColor:Int) -> UIColor {
+public func ColorFromRGB(_ hexColor:Int) -> UIColor {
     return ColorFromRGBA(hexColor, 1.0)
 }
 
-func ColorFromRGBA(_ hexColor:Int, _ alpha:CGFloat) -> UIColor {
+public func ColorFromRGBA(_ hexColor:Int, _ alpha:CGFloat) -> UIColor {
     let red   = CGFloat((hexColor & 0xff0000) >> 16)
     let green = CGFloat((hexColor & 0xff00) >> 8)
     let blue  = CGFloat(hexColor & 0xff)
@@ -70,25 +70,25 @@ func ColorFromRGBA(_ hexColor:Int, _ alpha:CGFloat) -> UIColor {
 //MARK - screen size tools
 //==========================================================================
 
-var kAppVersion   = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
-let kAppAdIdentifier = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+public var kAppVersion   = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
+public let kAppAdIdentifier = ASIdentifierManager.shared().advertisingIdentifier.uuidString
 
-let bp_padding = CGFloat(15)
-let bp_totalPadding = bp_padding * 2
+public let bp_padding = CGFloat(15)
+public let bp_totalPadding = bp_padding * 2
 
-let ios9  = { () -> Bool in
+public let ios9  = { () -> Bool in
     if #available(iOS 9.0, *) {
         return true
     }
     return false
 }()
-let ios10 = { () -> Bool in
+public let ios10 = { () -> Bool in
     if #available(iOS 10.0, *) {
         return true
     }
     return false
 }()
-let ios11 = { () -> Bool in
+public let ios11 = { () -> Bool in
     if #available(iOS 11.0, *) {
         return true
     }
@@ -107,7 +107,7 @@ let ios11 = { () -> Bool in
 ///   - str: 字符串
 ///   - font: label的font
 /// - Returns: 总长度
-func calculateWidth(str: String, font:UIFont) -> CGFloat {
+public func calculateWidth(str: String, font:UIFont) -> CGFloat {
     let str1 = NSString.init(string: str)
     return str1.size(withAttributes: [NSAttributedString.Key.font: font]).width
 }
@@ -119,7 +119,7 @@ func calculateWidth(str: String, font:UIFont) -> CGFloat {
 ///   - font: 传入UIFont
 ///   - size: optional CGSize
 /// - Returns: label的CGSize
-func calculateSize(text:String, font: UIFont, size:CGSize?) -> CGRect {
+public func calculateSize(text:String, font: UIFont, size:CGSize?) -> CGRect {
     let maxSize = (size != nil) ? size! : CGSize(width: bp_screenWidth, height: CGFloat.greatestFiniteMagnitude)
     let attributes = [NSAttributedString.Key.font: font]
     let rect = NSString.init(string: text).boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
@@ -131,7 +131,7 @@ func calculateSize(text:String, font: UIFont, size:CGSize?) -> CGRect {
 ///
 /// - Parameter label: 传入label,label的文字和font需要已经设定
 /// - Returns: label根据传入的的文字计算的宽度
-func calculateLabelWidth(_ label:UILabel) -> CGFloat {
+public func calculateLabelWidth(_ label:UILabel) -> CGFloat {
     return calculateWidth(str: label.text! + " ", font: label.font!)
 }
 

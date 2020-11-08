@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BPBundle: NSObject {
+public class BPBundle: NSObject {
     static var bundle: Bundle = {
         var bundlePathStr: String = Bundle.init(for: BPBundle.classForCoder()).resourcePath!
         bundlePathStr = bundlePathStr + "/BPComponents.bundle"
