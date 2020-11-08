@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class Theme: NSObject {
+open class Theme: NSObject {
     public class func padding(_ size:CGFloat) -> CGFloat {
         return size * bp_screenScale
     }
