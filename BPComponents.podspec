@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "BPComponents"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "BPComponents"
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "http://www.github.com/wupeng4321/AppBook.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "http://www.github.com/wupeng4321/BPComponents.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
