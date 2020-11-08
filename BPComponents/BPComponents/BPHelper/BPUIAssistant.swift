@@ -10,33 +10,33 @@ import Foundation
 import UIKit
 
 
-public let bp_screenWidth = UIScreen.main.bounds.width
-public let bp_screenHeight = UIScreen.main.bounds.height
-public let bp_screenScale = UIScreen.main.scale
+let bp_screenWidth = UIScreen.main.bounds.width
+let bp_screenHeight = UIScreen.main.bounds.height
+let bp_screenScale = UIScreen.main.scale
 
-public let bp_screenWidthInPortrait = min(bp_screenWidth, bp_screenHeight)
-public let bp_screenHeightInPortrait = max(bp_screenWidth, bp_screenHeight)
-public let bp_screenWidthInLandscape = max(bp_screenWidth, bp_screenHeight)
-public let bp_screenHeightInLandscape = min(bp_screenWidth, bp_screenHeight)
+let bp_screenWidthInPortrait = min(bp_screenWidth, bp_screenHeight)
+let bp_screenHeightInPortrait = max(bp_screenWidth, bp_screenHeight)
+let bp_screenWidthInLandscape = max(bp_screenWidth, bp_screenHeight)
+let bp_screenHeightInLandscape = min(bp_screenWidth, bp_screenHeight)
 
-public let bp_screenCenterX = bp_screenWidth * 0.5;
+let bp_screenCenterX = bp_screenWidth * 0.5;
 
-public let bp_statusBarFrame: CGRect = (UIApplication.shared.windows.first?.windowScene?.statusBarManager!.statusBarFrame)!
+let bp_statusBarFrame: CGRect = (UIApplication.shared.windows.first?.windowScene?.statusBarManager!.statusBarFrame)!
 
-public let bp_statusBarHeight = bp_statusBarFrame.height;
+let bp_statusBarHeight = bp_statusBarFrame.height;
 
-public let bp_navigationBarHeight = CGFloat(44);
+let bp_navigationBarHeight = CGFloat(44);
 
-public let bp_statusBarAndNavigationBarHeight = bp_statusBarHeight + bp_navigationBarHeight
+let bp_statusBarAndNavigationBarHeight = bp_statusBarHeight + bp_navigationBarHeight
 
-public let bp_tabBarHeight = CGFloat(bp_statusBarHeight > 20 ? 49 + 32 : 49)
+let bp_tabBarHeight = CGFloat(bp_statusBarHeight > 20 ? 49 + 32 : 49)
 
-public let bp_pixel: CGFloat = {
+let bp_pixel: CGFloat = {
     let pixel = CGFloat(1) / bp_screenScale
     return pixel
 }()
 
-public let bp_keyWindow: UIWindow = {
+let bp_keyWindow: UIWindow = {
     if #available(iOS 13.0, *) {
         for scene in UIApplication.shared.connectedScenes {
             for window in (scene as! UIWindowScene).windows {
@@ -60,7 +60,7 @@ public let bp_keyWindow: UIWindow = {
     return UIWindow.init()
 }()
 
-public let bp_safeAreaInsets: UIEdgeInsets  = {
+let bp_safeAreaInsets: UIEdgeInsets  = {
     let selector: Selector = NSSelectorFromString("safeAreaInsets")
     if (UIView.responds(to: selector)) {
         if #available(iOS 11.0, *) {
