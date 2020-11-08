@@ -12,7 +12,11 @@ import UIKit
     var s_allocInfo : Dictionary<String, Int> = [:]
 #endif
 
-open class BPInitDeinitViewController: UIViewController {    
+open class BPInitDeinitViewController: UIViewController {
+    open override func viewDidLoad() {
+        super .viewDidLoad()
+    }
+
     init() {
         super.init(nibName: nil, bundle: nil)
         self.allocInit()
