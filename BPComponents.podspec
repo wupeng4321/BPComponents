@@ -136,6 +136,6 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-   spec.dependency "HandyJSON", "~> 5.0.2"
+   #spec.dependency "HandyJSON", "~> 5.0.2"
 
 end
