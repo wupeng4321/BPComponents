@@ -1,0 +1,20 @@
+platform :ios, '13.0'
+install! 'cocoapods',
+generate_multiple_pod_projects:true,
+incremental_installation:true
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+workspace 'BPComponentsDemo.xcworkspace'
+
+target 'BPComponentsDemo' do
+  project 'BPComponentsDemo.project'
+  pod 'BPComponents', :path => '../'
+
+end
+
+target 'BPComponents' do
+  project '../BPComponents/BPComponents.project'
+  
+end
+

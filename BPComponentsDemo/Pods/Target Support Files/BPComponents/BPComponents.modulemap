@@ -1,0 +1,6 @@
+module BPComponents {
+  umbrella header "BPComponents-umbrella.h"
+
+  export *
+  module * { export * }
+}

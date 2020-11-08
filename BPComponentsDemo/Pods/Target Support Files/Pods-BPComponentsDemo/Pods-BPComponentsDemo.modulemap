@@ -1,0 +1,6 @@
+module Pods_BPComponentsDemo {
+  umbrella header "Pods-BPComponentsDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

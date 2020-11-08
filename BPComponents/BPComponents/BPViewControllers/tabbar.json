@@ -1,0 +1,26 @@
+[
+    {
+        "clsName" : "ABWorkHomeViewController",
+        "title" : "工作",
+        "imageName" : "tabbar_pos_ico",
+        "iconfont" : "e606",
+    },
+    {
+        "clsName" : "ABFocusHomeViewController",
+        "title" : "关注",
+        "imageName" : "tabbar_pos_ico",
+        "iconfont" :"e65b",
+    },
+    {
+        "clsName" : "ABDocumentHomeViewController",
+        "title" : "文档",
+        "imageName" : "tabbar_pos_ico",
+        "iconfont" :"e61f",
+    },
+    {
+        "clsName" : "ABMineHomeViewController",
+        "title" : "我的",
+        "imageName" : "tabbar_pos_ico",
+        "iconfont" :"e60c",
+    },
+]

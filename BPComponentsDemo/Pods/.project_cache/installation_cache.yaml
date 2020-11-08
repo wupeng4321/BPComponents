@@ -1,0 +1,56 @@
+BUILD_CONFIGURATIONS:
+  Debug: :debug
+  Release: :release
+CACHE_KEYS:
+  BPComponents:
+    BUILD_SETTINGS_CHECKSUM:
+      BPComponents:
+        :debug: bbdb33730441ec044d069f7d5a73b677
+        :release: bbdb33730441ec044d069f7d5a73b677
+    CHECKSUM: 0944e3ff0c9bf65b9ee792d8d93797fefa474d01
+    FILES:
+      - "../../BPComponents/BPComponents/BPBundle/BPBundle.swift"
+      - "../../BPComponents/BPComponents/BPComponents.h"
+      - "../../BPComponents/BPComponents/BPExtensions/Bundle+BP.swift"
+      - "../../BPComponents/BPComponents/BPExtensions/NSObject+BP.swift"
+      - "../../BPComponents/BPComponents/BPExtensions/String+BP.swift"
+      - "../../BPComponents/BPComponents/BPExtensions/UIColor+BP.swift"
+      - "../../BPComponents/BPComponents/BPExtensions/UIImage+BP.swift"
+      - "../../BPComponents/BPComponents/BPExtensions/UIView+BPLayout.swift"
+      - "../../BPComponents/BPComponents/BPHelper/BPUIAssistant.swift"
+      - "../../BPComponents/BPComponents/BPHelper/BPUtilMacro.swift"
+      - "../../BPComponents/BPComponents/BPRouter/BPRouter.swift"
+      - "../../BPComponents/BPComponents/BPTheme/BPIconFont.swift"
+      - "../../BPComponents/BPComponents/BPTheme/BPTheme.swift"
+      - "../../BPComponents/BPComponents/BPViewControllers/BPInitDeinitViewController.swift"
+      - "../../BPComponents/BPComponents/BPViewControllers/BPNavigationController.swift"
+      - "../../BPComponents/BPComponents/BPViewControllers/BPTabbarController.swift"
+      - "../../BPComponents/BPComponents/BPViewControllers/BPTabbarModel.swift"
+      - "../../BPComponents/BPComponents/BPViewControllers/tabbar.json"
+      - "../../LICENSE"
+    PROJECT_NAME: BPComponents
+    SPECS:
+      - BPComponents (0.0.1)
+  HandyJSON:
+    BUILD_SETTINGS_CHECKSUM:
+      HandyJSON:
+        :debug: d17794e0478cbed37396ff02a7a302b6
+        :release: d17794e0478cbed37396ff02a7a302b6
+    CHECKSUM: 9e4e236f5d2dbefad5155a77417bbea438201c03
+    PROJECT_NAME: HandyJSON
+    SPECS:
+      - HandyJSON (5.0.2)
+  Pods-BPComponents:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 1756c3d4e048405b3e5d479253191d11
+      Release: 1756c3d4e048405b3e5d479253191d11
+  Pods-BPComponentsDemo:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 0685f6cfbc1a118645c46a7f06474fac
+      Release: 0685f6cfbc1a118645c46a7f06474fac
+    FILES:
+      - "${PODS_CONFIGURATION_BUILD_DIR}/BPComponents/BPComponents.bundle"
+OBJECT_VERSION: 50
+PLUGINS:
+  cocoapods-stats:
+    {}
