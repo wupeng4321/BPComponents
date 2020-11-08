@@ -12,7 +12,7 @@ import UIKit
     var s_allocInfo : Dictionary<String, Int> = [:]
 #endif
 
-public class BPInitDeinitViewController: UIViewController {
+open class BPInitDeinitViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ public class BPInitDeinitViewController: UIViewController {
         self.allocInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

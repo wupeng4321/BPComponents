@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BPTabbarModel: NSObject {
+open class BPTabbarModel: NSObject {
     var clsName: String = ""
     var title: String = ""
     var imageName: String = ""

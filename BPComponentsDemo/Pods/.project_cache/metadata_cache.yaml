@@ -2,10 +2,6 @@ BPComponents:
   LABEL: BPComponents
   PROJECT_PATH: BPComponents.xcodeproj
   UUID: 60E10AA823FCF88E041EEAE2BA97AD4E
-HandyJSON:
-  LABEL: HandyJSON
-  PROJECT_PATH: HandyJSON.xcodeproj
-  UUID: 42160F46A22E1CA007076183E782CF4B
 Pods-BPComponents:
   LABEL: Pods-BPComponents
   PROJECT_PATH: Pods.xcodeproj

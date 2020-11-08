@@ -1,8 +1,8 @@
 {
   "name": "BPComponents",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "BPComponents",
-  "homepage": "http://www.github.com/wupeng4321/BPComponents",
+  "homepage": "https://github.com/wupeng4321/BPComponents",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -14,8 +14,8 @@
     "ios": "13.0"
   },
   "source": {
-    "git": "http://www.github.com/wupeng4321/AppBook.git",
-    "tag": "0.0.1"
+    "git": "https://github.com/wupeng4321/BPComponents.git",
+    "tag": "0.0.2"
   },
   "source_files": [
     "BPComponents/",
@@ -26,11 +26,6 @@
   "resource_bundles": {
     "BPComponents": [
       "BPComponents/BPComponents/**/*.{xib,storyboard,zip,xcassets,plist,strings,json}"
-    ]
-  },
-  "dependencies": {
-    "HandyJSON": [
-      "~> 5.0.2"
     ]
   }
 }

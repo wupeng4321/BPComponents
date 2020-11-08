@@ -1,23 +1,16 @@
 PODS:
-  - BPComponents (0.0.1):
-    - HandyJSON (~> 5.0.2)
-  - HandyJSON (5.0.2)
+  - BPComponents (0.0.2)
 
 DEPENDENCIES:
   - BPComponents (from `../`)
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - HandyJSON
 
 EXTERNAL SOURCES:
   BPComponents:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BPComponents: 0944e3ff0c9bf65b9ee792d8d93797fefa474d01
-  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  BPComponents: 58cc14cc6c7a6f746fe52c7b29dd43ae6a206cf6
 
-PODFILE CHECKSUM: 04f7c71719bfa49bf12cc656b41c2e39eea1304e
+PODFILE CHECKSUM: 4f378caf1d09e12577f8b048c71544f82570aa08
 
 COCOAPODS: 1.9.3

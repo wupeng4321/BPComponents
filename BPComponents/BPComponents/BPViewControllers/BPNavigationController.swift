@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class BPNavigationController: UINavigationController {
+open class BPNavigationController: UINavigationController {
     init() {
         super.init(nibName: nil, bundle: nil)
     }
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

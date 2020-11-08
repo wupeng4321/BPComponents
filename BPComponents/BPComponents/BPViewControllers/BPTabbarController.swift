@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-public class BPTabbarController: UITabBarController {
+open class BPTabbarController: UITabBarController {
     public init() {
         super.init(nibName: nil, bundle: nil)
         let tabbars: [BPTabbarModel] = self.getData()
@@ -17,7 +17,7 @@ public class BPTabbarController: UITabBarController {
         self.tabBar.tintColor = Theme.colorTheme
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     

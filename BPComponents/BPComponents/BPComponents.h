@@ -5,9 +5,9 @@
 //  Created by wupeng on 2020/11/6.
 //
 
-//#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>
 
-@import Foundation;
+//@import Foundation;
 
 //! Project version number for BPComponents.
 FOUNDATION_EXPORT double BPComponentsVersionNumber;
