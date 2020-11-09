@@ -121,10 +121,10 @@ Pod::Spec.new do |spec|
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
   
-  spec.resource_bundles = {
-    'BPComponents' =>  ['BPComponents/BPComponents/**/*.{xib,storyboard,zip,xcassets,plist,strings,json}'],
-
-  }
+#  spec.resource_bundles = {
+#    'BPComponents' =>  ['BPComponents/BPComponents/**/*.{xib,storyboard,zip,xcassets,plist,strings,json}'],
+#
+#  }
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
