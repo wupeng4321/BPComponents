@@ -26,11 +26,11 @@ public func ABLocalString(_ str:String) -> String {
     return NSLocalizedString(str, comment: "default")
 }
 
-public func kSafeDisplayStr(_ str:String?) ->String {
+public func bp_SafeDisplayStr(_ str:String?) ->String {
     return str ?? ""
 }
 
-public func KStrHasValue(_ str:String?) -> Bool {
+public func bp_StrHasValue(_ str:String?) -> Bool {
     guard let str = str else {
         return false
     }
