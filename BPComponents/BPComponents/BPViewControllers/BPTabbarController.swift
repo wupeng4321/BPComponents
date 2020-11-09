@@ -34,15 +34,16 @@ open class BPTabbarController: UITabBarController {
         
         let jsonData: [Dictionary] = try! JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [Dictionary<String, String>]
         
-        let jsonArr1: [BPTabbarModel] = []
+        var tabbarModels: [BPTabbarModel] = []
         for dic in jsonData {
-            let a = BPTabbarModel.init()
-            a.title = dic["title"] ?? ""
-            a.clsName = dic["clsName"] ?? ""
-            a.iconfont = dic["iconfont"] ?? ""
+            let tabbarModel = BPTabbarModel.init()
+            tabbarModel.title = dic["title"] ?? ""
+            tabbarModel.clsName = dic["clsName"] ?? ""
+            tabbarModel.iconfont = dic["iconfont"] ?? ""
+            tabbarModels.append(tabbarModel)
         }
 
-        return jsonArr1
+        return tabbarModels
     }
     
     
