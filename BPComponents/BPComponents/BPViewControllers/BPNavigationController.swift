@@ -9,10 +9,10 @@
 import UIKit
 
 open class BPNavigationController: UINavigationController {
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
     }
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

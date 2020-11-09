@@ -17,12 +17,12 @@ open class BPInitDeinitViewController: UIViewController {
         super .viewDidLoad()
     }
 
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
         self.allocInit()
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

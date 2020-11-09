@@ -9,8 +9,8 @@
 import Foundation
 
 open class BPTabbarModel: NSObject {
-    var clsName: String = ""
-    var title: String = ""
-    var imageName: String = ""
-    var iconfont: String = ""
+    open var clsName: String = ""
+    open var title: String = ""
+    open var imageName: String = ""
+    open var iconfont: String = ""
 }
