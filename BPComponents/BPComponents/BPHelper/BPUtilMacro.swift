@@ -26,8 +26,11 @@ public func ABLocalString(_ str:String) -> String {
     return NSLocalizedString(str, comment: "default")
 }
 
-public func bp_SafeDisplayStr(_ str:String?) ->String {
-    return str ?? ""
+public func bp_safeString(_ str:Any?) -> String {
+    guard str != nil else { return "" }
+    guard str is NSNull else { return "" }
+    guard str is String else { return "" }
+    return str as! String
 }
 
 public func bp_StrHasValue(_ str:String?) -> Bool {
@@ -134,6 +137,7 @@ public func calculateSize(text:String, font: UIFont, size:CGSize?) -> CGRect {
 public func calculateLabelWidth(_ label:UILabel) -> CGFloat {
     return calculateWidth(str: label.text! + " ", font: label.font!)
 }
+
 
 
 
