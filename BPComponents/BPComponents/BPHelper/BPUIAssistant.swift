@@ -31,6 +31,12 @@ public let bp_statusBarAndNavigationBarHeight = bp_statusBarHeight + bp_navigati
 
 public let bp_tabBarHeight = CGFloat(bp_statusBarHeight > 20 ? 49 + 32 : 49)
 
+public let bp_normalContentInset = UIEdgeInsets.init(top: 12, left: 15, bottom: 12, right: 15) /// normal content inset
+public let bp_padding_v = bp_normalContentInset.left /// normal horizontal padding
+public let bp_padding_h = bp_normalContentInset.top /// normal vertical padding
+public let bp_totalPadding_h = bp_padding_v * 2
+public let bp_totalPadding_v = bp_padding_h * 2
+
 public let bp_pixel: CGFloat = {
     let pixel = CGFloat(1) / bp_screenScale
     return pixel

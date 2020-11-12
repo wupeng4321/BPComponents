@@ -92,11 +92,8 @@ public func ColorFromRGBA(_ hexColor:Int, _ alpha:CGFloat) -> UIColor {
 //MARK - screen size tools
 //==========================================================================
 
-public var kAppVersion   = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
-public let kAppAdIdentifier = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-
-public let bp_padding = CGFloat(15)
-public let bp_totalPadding = bp_padding * 2
+public var bp_appVersion   = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
+public let bp_appAdIdentifier = ASIdentifierManager.shared().advertisingIdentifier.uuidString
 
 public let ios9  = { () -> Bool in
     if #available(iOS 9.0, *) {
