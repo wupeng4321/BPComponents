@@ -21,6 +21,40 @@ public extension String {
     }
     
     func singleLineWidth(with font:UIFont) -> CGFloat {
-        return self.boundingRect(with: CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.leastNormalMagnitude), options:[], attributes:[NSAttributedString.Key.font:font], context:nil).size.width
+        return self.boundingRect(with: CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.leastNormalMagnitude),
+                                 options:[.usesLineFragmentOrigin],
+                                 attributes:[NSAttributedString.Key.font:font],
+                                 context:nil).size.width
+    }
+    
+    func bp_size(with font:UIFont, constrainedToWidth:CGFloat, lineCount:Int = 0) -> CGSize {
+        var width = CGFloat(0)
+        var height = CGFloat(0)
+        
+        if lineCount == 0 {
+            let size = self.boundingRect(with: CGSize.init(width: constrainedToWidth,height: CGFloat.greatestFiniteMagnitude),
+                                         options:[.usesLineFragmentOrigin],
+                                         attributes:[NSAttributedString.Key.font:font],
+                                         context:nil).size
+            width = size.width
+            height = size.height
+        } else {
+            var testStr = ""
+            for _ in self {testStr += "X\n"}
+            testStr.removeLast()
+            
+            let maxSize = testStr.boundingRect(with: CGSize.init(width: constrainedToWidth,height: CGFloat.greatestFiniteMagnitude),
+                                               options:[.usesLineFragmentOrigin],
+                                               attributes:[NSAttributedString.Key.font:font],
+                                               context:nil).size
+            let textSize = self.boundingRect(with: CGSize.init(width: constrainedToWidth, height: CGFloat.greatestFiniteMagnitude),
+                                             options:[.usesLineFragmentOrigin],
+                                             attributes:[NSAttributedString.Key.font:font],
+                                             context:nil).size
+            
+            width = textSize.width
+            height = min(maxSize.height, textSize.height)
+        }
+        return CGSize.init(width: width, height: height)
     }
 }

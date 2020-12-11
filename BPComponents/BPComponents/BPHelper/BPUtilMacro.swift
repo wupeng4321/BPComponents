@@ -26,12 +26,17 @@ public func ABLocalString(_ str:String) -> String {
     return NSLocalizedString(str, comment: "default")
 }
 
-public func bp_isEmptyStr(_ str:Any?) -> Bool {
-    let s = bp_safeString(str)
-    return s.count == 0
+public func bp_isEmptyStr(_ strs:Any?...) -> Bool {
+    for str in strs {
+        let s = bp_safeStr(str)
+        if s.count == 0 {
+            return true
+        }
+    }
+    return false
 }
 
-public func bp_safeString(_ str:Any?) -> String {
+public func bp_safeStr(_ str:Any?) -> String {
     guard str != nil else { return "" }
     guard str is String else { return "" }
     return str as! String
