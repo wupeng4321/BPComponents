@@ -1,6 +1,6 @@
 {
   "name": "BPComponents",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "summary": "BPComponents",
   "homepage": "https://github.com/wupeng4321/BPComponents",
   "license": {
@@ -15,17 +15,12 @@
   },
   "source": {
     "git": "https://github.com/wupeng4321/BPComponents.git",
-    "tag": "0.0.2"
+    "tag": "0.0.4"
   },
   "source_files": [
     "BPComponents/",
     "BPComponents/**/*.swift",
     "BPComponents/**/*.{h,m}"
   ],
-  "exclude_files": "BPComponents/**/info.plist",
-  "resource_bundles": {
-    "BPComponents": [
-      "BPComponents/BPComponents/**/*.{xib,storyboard,zip,xcassets,plist,strings,json}"
-    ]
-  }
+  "exclude_files": "BPComponents/**/info.plist"
 }

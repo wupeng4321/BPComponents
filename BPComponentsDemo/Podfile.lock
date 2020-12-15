@@ -1,5 +1,5 @@
 PODS:
-  - BPComponents (0.0.2)
+  - BPComponents (0.0.4)
 
 DEPENDENCIES:
   - BPComponents (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BPComponents: 58cc14cc6c7a6f746fe52c7b29dd43ae6a206cf6
+  BPComponents: 8f7086d83e3c9ee28fdbdd1788d4b344aff514c2
 
 PODFILE CHECKSUM: 4f378caf1d09e12577f8b048c71544f82570aa08
 

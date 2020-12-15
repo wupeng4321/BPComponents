@@ -13,7 +13,7 @@ import AdSupport
 //==========================================================================
 //MARK - debug tools
 //==========================================================================
-public func ABLog<T>(_ message:T, file:String = #file, lineNumber:Int = #line) {
+public func BPLog<T>(_ message:T, file:String = #file, lineNumber:Int = #line) {
     #if DEBUG
         let fileName = (file as NSString).lastPathComponent
         print("[\(fileName):line:\(lineNumber)]")
@@ -22,7 +22,7 @@ public func ABLog<T>(_ message:T, file:String = #file, lineNumber:Int = #line) {
     #endif
 }
 
-public func ABLocalString(_ str:String) -> String {
+public func BPLocalString(_ str:String) -> String {
     return NSLocalizedString(str, comment: "default")
 }
 
@@ -100,80 +100,16 @@ public func ColorFromRGBA(_ hexColor:Int, _ alpha:CGFloat) -> UIColor {
 public var bp_appVersion   = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
 public let bp_appAdIdentifier = ASIdentifierManager.shared().advertisingIdentifier.uuidString
 
-public let ios9  = { () -> Bool in
-    if #available(iOS 9.0, *) {
-        return true
-    }
-    return false
-}()
-public let ios10 = { () -> Bool in
-    if #available(iOS 10.0, *) {
-        return true
-    }
-    return false
-}()
-public let ios11 = { () -> Bool in
-    if #available(iOS 11.0, *) {
-        return true
-    }
-    return false
-}()
+public let bp_ios8   = BPSystemVersionGreaterThanOrEqualTo(8.0)
+public let bp_ios9   = BPSystemVersionGreaterThanOrEqualTo(9.0)
+public let bp_ios10  = BPSystemVersionGreaterThanOrEqualTo(10.0)
+public let bp_ios11  = BPSystemVersionGreaterThanOrEqualTo(11.0)
+public let bp_ios12  = BPSystemVersionGreaterThanOrEqualTo(12.0)
+public let bp_ios13  = BPSystemVersionGreaterThanOrEqualTo(13.0)
+public let bp_ios14  = BPSystemVersionGreaterThanOrEqualTo(14.0)
 
-//public func NLSystemVersionGreaterOrEqualThan(version:Double) -> Bool {
+public func BPSystemVersionGreaterThanOrEqualTo(_ version:Double) -> Bool {
 //     UIDevice 在 macOS 中不存在，不能在所有平台上使用同样的代码路径
-//     let versionStr = UIDevice.current.systemVersion
-//     return Float(versionStr)! > Float(version)
-//}
-
-/// 计算label在确定UIFont下的长度,限label文字一行的情况
-///
-/// - Parameters:
-///   - str: 字符串
-///   - font: label的font
-/// - Returns: 总长度
-public func calculateWidth(str: String, font:UIFont) -> CGFloat {
-    let str1 = NSString.init(string: str)
-    return str1.size(withAttributes: [NSAttributedString.Key.font: font]).width
+     let versionStr = UIDevice.current.systemVersion
+     return Float(versionStr)! > Float(version)
 }
-
-/// 计算label在确定UIfont下的CGSize,不限文字行数
-///
-/// - Parameters:
-///   - text: 传入文本
-///   - font: 传入UIFont
-///   - size: optional CGSize
-/// - Returns: label的CGSize
-public func calculateSize(text:String, font: UIFont, size:CGSize?) -> CGRect {
-    let maxSize = (size != nil) ? size! : CGSize(width: bp_screenWidth, height: CGFloat.greatestFiniteMagnitude)
-    let attributes = [NSAttributedString.Key.font: font]
-    let rect = NSString.init(string: text).boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
-    return rect
-}
-
-
-/// 计算label的宽度
-///
-/// - Parameter label: 传入label,label的文字和font需要已经设定
-/// - Returns: label根据传入的的文字计算的宽度
-public func calculateLabelWidth(_ label:UILabel) -> CGFloat {
-    return calculateWidth(str: label.text! + " ", font: label.font!)
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -27,7 +27,6 @@ public extension UIViewController {
     var asyncBlock: AsyncBlock? {
         set {
             objc_setAssociatedObject(self, &asyncBlockKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY)
-            
         }
         get {
             return objc_getAssociatedObject(self, &asyncBlockKey) as? AsyncBlock

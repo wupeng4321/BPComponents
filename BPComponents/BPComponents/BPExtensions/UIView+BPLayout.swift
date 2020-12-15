@@ -182,6 +182,154 @@ public extension UIView {
         self.frame = frame;
     }
     
+    func bp_convert(point:CGPoint, to viewOrWindow:Any?) -> CGPoint {
+        if viewOrWindow == nil {
+            if self is UIWindow {
+                let window = self as! UIWindow
+                return window.convert(point, to: window)
+            } else {
+                return self.convert(point, to: nil)
+            }
+        }
+        
+        var from:UIWindow?
+        var to: UIWindow?
+        
+        if viewOrWindow is UIWindow {
+            from = viewOrWindow as? UIWindow
+        } else if (viewOrWindow is UIView) {
+            from = (viewOrWindow as! UIView).window!
+        }
+        
+        if self is UIWindow {
+            to = self as? UIWindow
+        } else {
+            to = self.window!
+        }
+        
+        guard from == nil || to == nil || from == to else {
+            return self.convert(point, to: viewOrWindow as! UIView)
+        }
+        
+        var r:CGPoint = point
+        r = self.convert(point, to: to!)
+        r = to!.convert(r, from: from)
+        r = from!.convert(r, from: viewOrWindow as! UIView)
+        return r
+    }
+    
+    func bp_convert(point:CGPoint, from viewOrWindow:Any?) -> CGPoint {
+        if viewOrWindow == nil {
+            if self is UIWindow {
+                let window = self as! UIWindow
+                return window.convert(point, from: window)
+            } else {
+                return self.convert(point, from: nil)
+            }
+        }
+        
+        var from:UIWindow?
+        var to: UIWindow?
+        
+        if viewOrWindow is UIWindow {
+            from = viewOrWindow as? UIWindow
+        } else if (viewOrWindow is UIView) {
+            from = (viewOrWindow as! UIView).window!
+        }
+        
+        if self is UIWindow {
+            to = self as? UIWindow
+        } else {
+            to = self.window!
+        }
+        
+        guard from == nil || to == nil || from == to else {
+            return self.convert(point, from: viewOrWindow as! UIView)
+        }
+        
+        var r:CGPoint = point
+        r = from!.convert(r, from: viewOrWindow as! UIView)
+        r = to!.convert(r, from: from)
+        r = self.convert(point, from: to!)
+        
+        return r
+        
+    }
+    
+    func bp_convert(rect:CGRect, to viewOrWindow:Any?) -> CGRect {
+        if viewOrWindow == nil {
+            if self is UIWindow {
+                let window = self as! UIWindow
+                return window.convert(rect, to: window)
+            } else {
+                return self.convert(rect, to: nil)
+            }
+        }
+        
+        var from:UIWindow?
+        var to: UIWindow?
+        
+        if viewOrWindow is UIWindow {
+            from = viewOrWindow as? UIWindow
+        } else if (viewOrWindow is UIView) {
+            from = (viewOrWindow as! UIView).window!
+        }
+        
+        if self is UIWindow {
+            to = self as? UIWindow
+        } else {
+            to = self.window!
+        }
+        
+        guard from == nil || to == nil || from == to else {
+            return self.convert(rect, to: viewOrWindow as! UIView)
+        }
+        
+        var r:CGRect = rect
+        r = self.convert(rect, to: to!)
+        r = to!.convert(r, from: from)
+        r = from!.convert(r, from: viewOrWindow as! UIView)
+        return r
+    }
+    
+    func bp_convert(rect:CGRect, from viewOrWindow:Any?) -> CGRect {
+        if viewOrWindow == nil {
+            if self is UIWindow {
+                let window = self as! UIWindow
+                return window.convert(rect, from: window)
+            } else {
+                return self.convert(rect, from: nil)
+            }
+        }
+        
+        var from:UIWindow?
+        var to: UIWindow?
+        
+        if viewOrWindow is UIWindow {
+            from = viewOrWindow as? UIWindow
+        } else if (viewOrWindow is UIView) {
+            from = (viewOrWindow as! UIView).window!
+        }
+        
+        if self is UIWindow {
+            to = self as? UIWindow
+        } else {
+            to = self.window!
+        }
+        
+        guard from == nil || to == nil || from == to else {
+            return self.convert(rect, from: viewOrWindow as! UIView)
+        }
+        
+        var r:CGRect = rect
+        r = from!.convert(r, from: viewOrWindow as! UIView)
+        r = to!.convert(r, from: from)
+        r = self.convert(rect, from: to!)
+        
+        return r
+        
+    }
+    
     func bp_snapshotWithScale(_ scale: CGFloat) -> UIImage {
         let size = self.bounds.size;
         UIGraphicsBeginImageContextWithOptions(size, true, scale);
@@ -189,6 +337,12 @@ public extension UIView {
         let resultImage = UIGraphicsGetImageFromCurrentImageContext()!;
         UIGraphicsEndImageContext();
         return resultImage;
+    }
+    
+    func bp_makeRoundedRectangleShape() {
+        let length = min(self.bp_width, self.bp_height)
+        self.clipsToBounds = true
+        self.layer.cornerRadius = length * 0.5
     }
     
     

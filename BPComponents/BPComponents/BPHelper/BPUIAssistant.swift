@@ -80,10 +80,10 @@ public let bp_safeAreaInsets: UIEdgeInsets  = {
 }()
 
 public func bp_topViewController() -> UIViewController? {
-    return bp_topViewControllerOfWindow(bp_keyWindow) ?? nil
+    return bp_topViewController(of: bp_keyWindow) ?? nil
 }
 
-public func bp_topViewControllerOfWindow(_ window: UIWindow?) -> UIViewController? {
+public func bp_topViewController(of window: UIWindow?) -> UIViewController? {
     guard window != nil else { return nil }
     var result = window?.rootViewController
     guard result != nil  else { return nil }
